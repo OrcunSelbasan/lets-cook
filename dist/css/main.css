@@ -1,4 +1,41 @@
 nav {
   font-family: "Lato", sans-serif;
 }
+
+.carousel-item img {
+  height: 50vh;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+@media screen and (max-width: 991px) {
+  .recipesAndCategories {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .recipesAndCategories .categories {
+    margin-top: 1em;
+  }
+  .recipesAndCategories .categories p::after {
+    margin: .2em 1.5em;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    clear: both;
+    content: "";
+    position: absolute;
+    width: 10%;
+    height: 1px;
+    color: black;
+    background-color: black;
+  }
+}
 /*# sourceMappingURL=main.css.map */
