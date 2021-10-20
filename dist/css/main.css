@@ -8,6 +8,26 @@ nav {
      object-fit: cover;
 }
 
+.categories-list {
+  list-style: none;
+  padding: 0;
+  text-align: center;
+}
+
+.category-item {
+  font-size: 1.3em;
+}
+
+.category-item a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.category-item a:hover {
+  font-size: 1.3em;
+  color: #FAC937;
+}
+
 @media screen and (max-width: 991px) {
   .recipesAndCategories {
     -webkit-box-orient: vertical;

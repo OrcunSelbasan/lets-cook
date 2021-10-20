@@ -12,6 +12,24 @@ nav{
     }
 }
 
+.categories-list{
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+.category-item{
+    font-size: 1.3em;
+    a{
+        color: #fff;
+        text-decoration: none;
+        &:hover{
+            font-size: 1.3em;
+            color: #FAC937;
+        }
+    }
+}
+
 .recipesAndCategories{
     @include mQ(991px){
         flex-direction: column;
