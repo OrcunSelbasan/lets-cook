@@ -6,11 +6,18 @@ let tryRecipe = document.querySelectorAll("#viewRecipe");
 
 // Carousel Recipes
 const randomCarouselRecipes = () => {
-  for (let i = 0; i < 3; i++) {
+  let upperbound = 3; 
+  let carouselRecipes = [];
+  for (let i = 0; i < upperbound; i++) {
     fetchData("https://www.themealdb.com/api/json/v1/1/random.php")
       .then((data) => {
-        recipeHeader[i].innerText = data.meals[0].strMeal;
-        carouselImage[i].setAttribute("src", data.meals[0].strMealThumb);
+        if (!carouselRecipes.includes(data.meals[0].strMeal)) { 
+          recipeHeader[i].innerText = data.meals[0].strMeal;
+          carouselImage[i].setAttribute("src", data.meals[0].strMealThumb);
+          carouselRecipes.push(data.meals[0].strMeal)
+        } else {
+          upperbound++;
+        }
       })
       .catch((e) => console.log(e.message));
   }
