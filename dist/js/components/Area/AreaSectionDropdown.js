@@ -32,9 +32,9 @@ const displayRecipes = () => {
           data.meals.forEach((meal) => {
             document.querySelector(".area-cards").innerHTML += `
                     <div class="card m-3" style="width: 18rem;">
-                        <img src="${meal["strMealThumb"]}" class="card-img-top" alt="">
+                        <img src="${meal["strMealThumb"]}" class="card-img-top mt-3 rounded-3" alt="">
                         <div class="card-body d-flex flex-column justify-content-between">
-                          <h5 class="card-title">${meal["strMeal"]}</h5>                        
+                          <h5 class="card-title text-center">${meal["strMeal"]}</h5>                        
                           <button class="btn btn-outline-primary" id="viewRecipe" data-bs-toggle="modal" data-bs-target="#exampleModal">View Recipe</button>
                         </div>
                     </div>
