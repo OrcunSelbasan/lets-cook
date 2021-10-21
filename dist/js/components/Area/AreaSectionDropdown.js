@@ -35,7 +35,7 @@ const displayRecipes = () => {
                         <img src="${meal["strMealThumb"]}" class="card-img-top" alt="">
                         <div class="card-body d-flex flex-column justify-content-between">
                           <h5 class="card-title">${meal["strMeal"]}</h5>                        
-                          <button class="btn btn-outline-primary" id="viewRecipe" data-bs-toggle="modal" data-bs-target="#exampleModal">Go somewhere</button>
+                          <button class="btn btn-outline-primary" id="viewRecipe" data-bs-toggle="modal" data-bs-target="#exampleModal">View Recipe</button>
                         </div>
                     </div>
                  `;
