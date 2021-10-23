@@ -1,5 +1,4 @@
 import { fetchData, createListItem } from "../Utils.js";
-import { recipeEvent } from "../Hero/HeroSectionCarousel.js";
 
 let clickedItem = localStorage.getItem("clickedItem");
 let categoryName = document.querySelector(".categoryName");
@@ -73,6 +72,4 @@ const renderCategoryPage = () => {
 };
 
 renderCategoryPage();
-console.log(clickedItem);
 
-export { renderCategoryPage };

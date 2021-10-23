@@ -22,7 +22,7 @@ const search = () =>
                                     <img src="${meal["strMealThumb"]}" class="card-img-top mt-3 rounded-3" alt="">
                                     <div class="card-body d-flex flex-column justify-content-between">
                                       <h5 class="card-title text-center">${meal["strMeal"]}</h5>                        
-                                      <button class="btn btn-outline-primary" id="viewRecipe" data-bs-toggle="modal" data-bs-target="#exampleModal">View Recipe</button>
+                                      <a href="./pages/search.html" class="btn btn-outline-primary" id="${meal.idMeal}" onclick="localStorage.setItem('searchID',${meal.idMeal})">View Recipe</a>
                                     </div>
                                 </div>
                              `;
@@ -34,7 +34,7 @@ const search = () =>
                                     <img src="${meal["strMealThumb"]}" class="card-img-top mt-3 rounded-3" alt="">
                                     <div class="card-body d-flex flex-column justify-content-between">
                                       <h5 class="card-title text-center">${meal["strMeal"]}</h5>                        
-                                      <button class="btn btn-outline-primary" id="viewRecipe" data-bs-toggle="modal" data-bs-target="#exampleModal">View Recipe</button>
+                                      <a href="./pages/search.html" class="btn btn-outline-primary" id="${meal.idMeal}" onclick="localStorage.setItem('searchID',${meal.idMeal})">View Recipe</a>
                                     </div>
                                 </div>
                              `;
@@ -53,14 +53,14 @@ const search = () =>
                   "Oops, Couldn't Find It";
                 if (searchResults.innerHTML.length > 0) {
                   searchResults.innerHTML =
-                    "<p class='display-3 text-center'>Sorry, I couldn't find it :(. Maybe you like those</p>";
+                    "<p class='display-3 text-center'>Sorry, I couldn't find it :( Maybe you like those</p>";
                   data.meals.forEach((meal) => {
                     searchResults.innerHTML += `
                                       <div class="card m-3" style="width: 18rem;">
                                           <img src="${meal["strMealThumb"]}" class="card-img-top mt-3 rounded-3" alt="">
                                           <div class="card-body d-flex flex-column justify-content-between">
                                             <h5 class="card-title text-center">${meal["strMeal"]}</h5>                        
-                                            <button class="btn btn-outline-primary" id="viewRecipe" data-bs-toggle="modal" data-bs-target="#exampleModal">View Recipe</button>
+                                            <a href="./pages/search.html" class="btn btn-outline-primary" id="${meal.idMeal}" onclick="localStorage.setItem('searchID',${meal.idMeal})">View Recipe</a>
                                           </div>
                                       </div>
                                    `;
@@ -72,7 +72,7 @@ const search = () =>
                                           <img src="${meal["strMealThumb"]}" class="card-img-top mt-3 rounded-3" alt="">
                                           <div class="card-body d-flex flex-column justify-content-between">
                                             <h5 class="card-title text-center">${meal["strMeal"]}</h5>                        
-                                            <button class="btn btn-outline-primary" id="viewRecipe" data-bs-toggle="modal" data-bs-target="#exampleModal">View Recipe</button>
+                                            <a href="./pages/search.html" class="btn btn-outline-primary" id="${meal.idMeal}" onclick="localStorage.setItem('searchID',${meal.idMeal})">View Recipe</a>
                                           </div>
                                       </div>
                                    `;
@@ -98,7 +98,7 @@ const search = () =>
                                     <img src="${meal["strMealThumb"]}" class="card-img-top mt-3 rounded-3" alt="">
                                     <div class="card-body d-flex flex-column justify-content-between">
                                       <h5 class="card-title text-center">${meal["strMeal"]}</h5>                        
-                                      <button class="btn btn-outline-primary" id="viewRecipe" data-bs-toggle="modal" data-bs-target="#exampleModal">View Recipe</button>
+                                      <a href="./pages/search.html" class="btn btn-outline-primary" id="${meal.idMeal}" onclick="localStorage.setItem('searchID',${meal.idMeal})">View Recipe</a>
                                     </div>
                                 </div>
                              `;
@@ -110,7 +110,7 @@ const search = () =>
                                     <img src="${meal["strMealThumb"]}" class="card-img-top mt-3 rounded-3" alt="">
                                     <div class="card-body d-flex flex-column justify-content-between">
                                       <h5 class="card-title text-center">${meal["strMeal"]}</h5>                        
-                                      <button class="btn btn-outline-primary" id="viewRecipe" data-bs-toggle="modal" data-bs-target="#exampleModal">View Recipe</button>
+                                      <a href="./pages/search.html" class="btn btn-outline-primary" id="${meal.idMeal}" onclick="localStorage.setItem('searchID',${meal.idMeal})">View Recipe</a>
                                     </div>
                                 </div>
                              `;
@@ -123,9 +123,12 @@ const search = () =>
               "<p class='display-3 text-center'>Oops, Couldn't Find It</p>";
           });
       }
+    } else {
+      e.preventDefault();
+      searchResults.innerHTML =
+              "<p class='display-4 text-center'>Empty Search :/</p>";
     }
 
-    console.log("executed");
   });
 
 const clear = () => {

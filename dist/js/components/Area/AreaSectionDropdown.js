@@ -46,16 +46,17 @@ const displayRecipes = () => {
               // Receive food name to search on api
               let foodName =
                 e.target.parentElement.querySelector(".card-title").innerText;
-        
+
               fetchData(
                 `https://www.themealdb.com/api/json/v1/1/search.php?s=${foodName}`
               )
                 .then((data) => {
                   const obj = data.meals[0];
-        
+
                   // Manipulates modal header according to recipe
-                  document.querySelector("#exampleModalLabel").innerText = obj.strMeal;
-        
+                  document.querySelector("#exampleModalLabel").innerText =
+                    obj.strMeal;
+
                   // Lists ingredients
                   for (let i = 1; i < 21; i++) {
                     let propName = `strIngredient${i}`;
@@ -65,7 +66,7 @@ const displayRecipes = () => {
                       createListItem("#ingredients", first + rest);
                     }
                   }
-        
+
                   let instructions = obj.strInstructions;
                   let pTag = document
                     .querySelector("#instructions")
@@ -76,8 +77,7 @@ const displayRecipes = () => {
               document.querySelector("#ingredients").innerHTML = "";
               document.querySelector("#instructions").innerHTML = "";
             });
-        })
-          console.log(allRecipes);
+          });
         })
         .catch((e) => alert(e.message));
     }
