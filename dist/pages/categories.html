@@ -20,7 +20,7 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light  mx-5">
         <div class="container-fluid">
-          <a class="navbar-brand fs-3" href="#">Let's Cook</a>
+          <a class="navbar-brand fs-3" href="../index.html">Let's Cook</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -41,25 +41,40 @@
     </nav>
     <!-- Recipe Cards -->
     <div class="container-fluid">
-        <p class="display-3 text-center">Beef</p>
-        <p class="lead text-center">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Atque dolor ratione impedit delectus dolore ab earum quidem nobis praesentium necessitatibus.</p>
-        <div class="row justify-content-center mb-5">
-            <div class="card m-3" style="width: 18rem;">
-                <img src="" class="card-img-top" alt="">
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-            </div>
+        <p class="display-3  text-center categoryName">Beef</p>
+        <p class="lead text-center w-75 m-auto my-2  categoryDescription">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Atque dolor ratione impedit delectus dolore ab earum quidem nobis praesentium necessitatibus.</p>
+        <div class="row justify-content-center mb-5 categoryRecipes">
         </div>
     </div>
     <!-- Go back -->
-    <div class="container-fluid d-flex justify-content-center">
+    <div class="container-fluid mb-5 d-flex justify-content-center">
         <a href="../index.html">
             <button class="btn btn-lg btn-primary"> <i class="fas fa-long-arrow-alt-left"></i> Go to the main page</button>
         </a>
     </div>
+
+    <!-- Recipe Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+          <div class="modal-header text-center">
+            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+            <button type="button" class="btn-close m-0" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body p-5">
+            <p class="lead fw-bold">Ingredients</p>
+            <ul id="ingredients">
+
+            </ul>
+            <p class="lead" id="instructions"></p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="../js/components/Categories/RenderCatageoryPage.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
 </html>

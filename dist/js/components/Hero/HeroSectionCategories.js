@@ -7,7 +7,7 @@ const createHeroCategories = () => fetchData("https://www.themealdb.com/api/json
     );
     Array.from(document.getElementsByClassName('category-item')).forEach(element => {
         let temp = element.innerText;
-        element.innerHTML = `<a href="./pages/categories.html">${temp}</a>`;
+        element.innerHTML = `<a onclick="localStorage.setItem('clickedItem','${temp}');" href="./pages/categories.html">${temp}</a>`;
         localStorage.setItem(`${temp}`, temp);
     })
   })
